@@ -111,8 +111,8 @@ const waterShader = new Cesium.CustomShader({
             float t = clamp((waterIndex - 0.1) / 0.9, 0.0, 1.0);
             outColor = mix(vec3(0.0, 0.0, 0.4), vec3(0.0, 0.0, 1.0), t); // Dark Blue to Pure Blue
         } else {
-             // Non-water - Black
-             outColor = vec3(0.0, 0.0, 0.0);
+             // Non-water - Gray (to see terrain)
+             outColor = vec3(0.5, 0.5, 0.5);
         }
 
         material.diffuse = outColor;
