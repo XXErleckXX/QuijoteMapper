@@ -101,7 +101,7 @@ const waterShader = new Cesium.CustomShader({
 
         // Visualization
         // High index (> 0.1) -> Blue (Threshold raised to avoid trees)
-        // Low index (< 0.1) -> Black
+        // Low index (< 0.1) -> Scale of Grey/Blue-Grey
 
         vec3 outColor;
 
@@ -111,8 +111,11 @@ const waterShader = new Cesium.CustomShader({
             float t = clamp((waterIndex - 0.1) / 0.9, 0.0, 1.0);
             outColor = mix(vec3(0.0, 0.0, 0.4), vec3(0.0, 0.0, 1.0), t); // Dark Blue to Pure Blue
         } else {
-             // Non-water - Gray (to see terrain)
-             outColor = vec3(0.5, 0.5, 0.5);
+             // Non-water - Gradient Scale
+             // Normalize -1.0 to 0.1 -> 0.0 to 1.0
+             float t = clamp((waterIndex + 1.0) / 1.1, 0.0, 1.0);
+             // mix(Dark Grey, Blueish Grey)
+             outColor = mix(vec3(0.3, 0.3, 0.3), vec3(0.5, 0.5, 0.6), t); 
         }
 
         material.diffuse = outColor;
