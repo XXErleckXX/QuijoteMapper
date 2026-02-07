@@ -21,7 +21,8 @@ const modelos = {
     4365574: 'Villalgordo 1',
     4365575: 'Villalgordo 2',
     4365576: 'Minaya',
-    4365588: 'Pinares'
+    4365588: 'Pinares',
+    4425349: 'Cerro Molino Ledaña'
 };
 
 let tilesetActual = null;
@@ -247,4 +248,5 @@ window.irMundo = () => {
         destination: Cesium.Cartesian3.fromDegrees(-4, 40, 18000000),
         duration: 2
     });
+
 };
