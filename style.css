@@ -4,9 +4,7 @@
     box-sizing: border-box;
 }
 
-html,
-body,
-#cesiumContainer {
+html, body, #cesiumContainer {
     width: 100%;
     height: 100vh;
     overflow: hidden;
@@ -19,17 +17,17 @@ body,
     z-index: 1000;
     display: flex;
     flex-direction: column;
+    gap: 15px;
 }
 
 .btn {
     padding: 15px 25px;
-    margin-bottom: 10px;
     border: 2px solid transparent;
     border-radius: 8px;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    background: #4a90e2;
+    background: #1967d2;
     color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: all 0.2s;
@@ -46,32 +44,52 @@ body,
 }
 
 .btn-modelo {
-    background: #4a90e2;
+    background: linear-gradient(145deg, #1967d2, #4a7de6);
 }
 
 .btn-modelo:hover {
-    background: #357abd;
+    background: linear-gradient(145deg, #1554b0, #3264d9);
 }
 
 .btn-mundo {
-    background: #e94e77;
-    margin-bottom: 0;
+    background: linear-gradient(145deg, #734E39, #815647);
+}
+
+.btn-mundo:hover {
+    background: linear-gradient(145deg, #5D4037, #734E39);
+}
+
+.btn-vari {
+    background: linear-gradient(145deg, #cc7a00, #d68910);
+    margin-top: 0;
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.btn-vari:hover {
+    background: linear-gradient(145deg, #9c5900, #af6f00);
+}
+
+.btn-vari.active {
+    background: linear-gradient(145deg, #4D8042, #5A8E4A);
+}
+
+.btn-vari.active:hover {
+    background: linear-gradient(145deg, #3D6A32, #4D8042);
 }
 
 .model-select {
     padding: 15px 20px;
-    margin-bottom: 10px;
     border: 2px solid transparent;
     border-radius: 8px;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    background: #4a90e2;
+    background: #1967d2;
     color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     outline: none;
     appearance: none;
-
     background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2082.2c3.6-3.6%205.4-7.8%205.4-12.8%200-5-1.8-9.3-5.4-12.9z%22%2F%3E%3C%2Fsvg%3E");
     background-repeat: no-repeat;
     background-position: right 15px top 50%;
@@ -79,7 +97,10 @@ body,
 }
 
 .model-select:hover {
-    background-color: #357abd;
+    background-color: #1554b0;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.4);
 }
 
 .model-select option {
@@ -87,22 +108,71 @@ body,
     color: #333;
 }
 
+.btn-water {
+    background: linear-gradient(145deg, #4f8ca0, #67A8C2);
+    color: white;
+    margin-top: 0;
+    flex-grow: 1;
+    margin-right: 10px;
+    padding: 15px 25px;
+}
+
+.btn-water:hover {
+    background: linear-gradient(145deg, #3f7a90, #5194a8);
+}
+
+.btn-water.active {
+    background: linear-gradient(145deg, #b4b4c1, #c8c8d1);
+}
+
+.btn-water.active:hover {
+    background: linear-gradient(145deg, #9a9aa7, #aeaeb5);
+}
+
+.btn-visibility {
+    background: linear-gradient(145deg, #4D8042, #5A8E4A);
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: fit-content;
+}
+
+.btn-visibility:hover {
+    background: linear-gradient(145deg, #3D6A32, #4D8042);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.btn-visibility:active {
+    transform: scale(0.95);
+}
+
+.btn-visibility.hidden-model {
+    background: linear-gradient(145deg, #b4b4c1, #c8c8d1);
+}
+
+.btn-visibility.hidden-model:hover {
+    background: linear-gradient(145deg, #9a9aa7, #aeaeb5);
+}
+
 .vari-container,
 .water-container {
-    margin-top: 10px;
+    margin-top: 0;
     position: relative;
     display: flex;
     align-items: center;
     width: 100%;
-}
-
-.btn-vari {
-    background: #e67e22;
-
-    margin-top: 0;
-
-    flex-grow: 1;
-    margin-right: 10px;
 }
 
 .tooltip-container {
@@ -124,6 +194,7 @@ body,
     cursor: help;
     backdrop-filter: blur(4px);
     border: 1px solid rgba(255, 255, 255, 0.4);
+    transform: translateY(0px);
 }
 
 .info-icon:hover {
@@ -133,18 +204,16 @@ body,
 .tooltip-text {
     visibility: hidden;
     width: 220px;
-    background-color: rgba(30, 30, 30, 0.95);
-    color: #fff;
+    background-color: rgba(0, 0, 0, 0.95);
+    color: #F2F2F2;
     text-align: left;
     border-radius: 6px;
     padding: 10px;
     position: absolute;
     z-index: 1001;
     bottom: 125%;
-
     left: 50%;
     margin-left: -110px;
-
     opacity: 0;
     transition: opacity 0.3s;
     font-size: 12px;
@@ -169,57 +238,25 @@ body,
     opacity: 1;
 }
 
-
-.btn-vari:hover {
-    background: #d35400;
-}
-
-.btn-vari.active {
-    background: #27ae60;
-    /* Green */
-}
-
-.btn-vari.active:hover {
-    background: #2ecc71;
-}
-
-.btn-mundo:hover {
-    background: #d6336c;
-}
-
-@media (max-width: 768px) {
-    .controles {
-        left: 10px;
-        top: 10px;
-    }
-
-    .btn {
-        padding: 12px 20px;
-        font-size: 14px;
-    }
-}
-
 .row-controls {
     display: flex;
     align-items: flex-start;
     gap: 10px;
-    margin-top: 15px;
 }
 
 .height-control {
-    background: rgba(255, 255, 255, 0.9);
+    background: white;
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
-    color: #333;
+    color: #000000;
     width: fit-content;
 }
 
 .height-control label {
     display: block;
     font-weight: bold;
-    margin-bottom: 10px;
     font-size: 14px;
 }
 
@@ -227,17 +264,32 @@ body,
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 150px;
     justify-content: space-between;
+    height: 150px;
+    width: 18px;
+}
+
+.slider-wrapper span {
+    font-size: 20px; 
+    font-weight: bold;
+    line-height: 1;
+    position: relative;
+    left: -2px;       
+    margin-top: 0
 }
 
 #heightSlider {
+    background: #1967d2;
     writing-mode: bt-lr;
     -webkit-appearance: slider-vertical;
     appearance: slider-vertical;
     width: 8px;
     height: 100px;
     padding: 0 5px;
+}
+
+#heightSlider:hover {
+    background-color: #1554b0; 
 }
 
 .height-content {
@@ -248,56 +300,14 @@ body,
     justify-content: center;
 }
 
-.btn-visibility {
-    background: #4a90e2;
-    color: white;
-    border: 2px solid transparent;
-    border-radius: 8px;
-    padding: 15px 20px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: all 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    height: fit-content;
-}
-
-.btn-visibility:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    border-color: rgba(255, 255, 255, 0.3);
-}
-
-.btn-visibility:active {
-    transform: scale(0.95);
-}
-
-.btn-visibility.hidden-model {
-    background: #95a5a6;
-    opacity: 1;
-}
-
-.btn-water {
-    background: #3498db;
-    color: white;
-    margin-top: 0;
-    flex-grow: 1;
-    margin-right: 10px;
-    padding: 15px 25px;
-}
-
-.btn-water:hover {
-    background: #2980b9;
-}
-
-.btn-water.active {
-    background: #1abc9c;
-}
-
-.btn-water.active:hover {
-    background: #16a085;
+@media (max-width: 768px) {
+    .controles {
+        left: 10px;
+        top: 10px;
+    }
+    
+    .btn {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
 }

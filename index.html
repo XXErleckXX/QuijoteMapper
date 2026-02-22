@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SolumCore</title>
+    <title>QuijoteMapper</title>
 
     <script src="https://cesium.com/downloads/cesiumjs/releases/1.115/Build/Cesium/Cesium.js"></script>
     <link href="https://cesium.com/downloads/cesiumjs/releases/1.115/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
@@ -26,28 +25,28 @@
         </select>
         <button class="btn btn-mundo" onclick="irMundo()">🌍 Vista Mundial</button>
         <div class="vari-container">
-            <button class="btn btn-vari" id="btnVari" onclick="toggleVari()">🍂 VARI Filter: OFF</button>
+            <button class="btn btn-vari" id="btnVari" onclick="toggleVari()">🍂 Filtro VARI: OFF</button>
             <div class="tooltip-container">
                 <span class="info-icon">?</span>
                 <span class="tooltip-text">
                     <strong>¿Qué es VARI?</strong><br>
                     El Índice Atmosféricamente Resistente Visible (VARI) resalta la vegetación usando solo el espectro
                     visible.<br>
-                    <span style="color:#2ecc71">■</span> Vegetación sana<br>
-                    <span style="color:#e74c3c">■</span> Suelo desnudo / Sin vegetación
+                    <span style="color:#2ecc71">■</span> Vegetación Sana<br>
+                    <span style="color:#e74c3c">■</span> Suelo Desnudo
                 </span>
             </div>
         </div>
 
         <div class="water-container">
-            <button class="btn btn-water" id="btnWater" onclick="toggleWater()">💧 Water Filter: OFF</button>
+            <button class="btn btn-water" id="btnWater" onclick="toggleWater()">💧 Filtro de Agua: OFF</button>
             <div class="tooltip-container">
                 <span class="info-icon">?</span>
                 <span class="tooltip-text">
                     <strong>¿Qué es el Filtro de Agua?</strong><br>
                     Este filtro resalta las zonas de agua detectando la predominancia del azul.<br>
                     <span style="color:#3498db">■</span> Agua (Azul)<br>
-                    <span style="color:#000000">■</span> Sin agua (Negro)
+                    <span style="color:#b4b4c1">■</span> Sin agua (Gris)
                 </span>
             </div>
         </div>
@@ -65,12 +64,11 @@
                 </div>
             </div>
             <button id="btnVisibility" class="btn btn-visibility" onclick="toggleVisibility()">
-                Visibility 👁️
+                Visibilidad 👁️
             </button>
         </div>
     </div>
 
     <script src="script.js"></script>
 </body>
-
 </html>

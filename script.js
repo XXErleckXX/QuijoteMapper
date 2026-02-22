@@ -26,7 +26,6 @@ const modelos = {
 };
 
 let tilesetActual = null;
-
 let variEnabled = false;
 let waterEnabled = false;
 
@@ -129,17 +128,17 @@ window.toggleVari = () => {
     const btnVari = document.getElementById('btnVari');
 
     if (variEnabled) {
-        btnVari.innerHTML = '🍃 VARI Filter: ON';
+        btnVari.innerHTML = '🍃 Filtro VARI: ON';
         btnVari.classList.add('active');
 
         if (waterEnabled) {
             waterEnabled = false;
             const btnWater = document.getElementById('btnWater');
-            btnWater.innerHTML = '💧 Water Filter: OFF';
+            btnWater.innerHTML = '💧 Filtro de Agua: OFF';
             btnWater.classList.remove('active');
         }
     } else {
-        btnVari.innerHTML = '🍂 VARI Filter: OFF';
+        btnVari.innerHTML = '🍂 Filtro VARI: OFF';
         btnVari.classList.remove('active');
     }
 
@@ -153,17 +152,17 @@ window.toggleWater = () => {
     const btnWater = document.getElementById('btnWater');
 
     if (waterEnabled) {
-        btnWater.innerHTML = '💧 Water Filter: ON';
+        btnWater.innerHTML = '💧 Filtro de Agua: ON';
         btnWater.classList.add('active');
 
         if (variEnabled) {
             variEnabled = false;
             const btnVari = document.getElementById('btnVari');
-            btnVari.innerHTML = '🍂 VARI Filter: OFF';
+            btnVari.innerHTML = '🍂 Filtro VARI: OFF';
             btnVari.classList.remove('active');
         }
     } else {
-        btnWater.innerHTML = '💧 Water Filter: OFF';
+        btnWater.innerHTML = '💧 Filtro de Agua: OFF';
         btnWater.classList.remove('active');
     }
 
@@ -173,8 +172,8 @@ window.toggleWater = () => {
 };
 
 const originalCargarModelo = window.cargarModelo;
-window.cargarModelo = async id => {
 
+window.cargarModelo = async id => {
     try {
         if (tilesetActual) {
             viewer.scene.primitives.remove(tilesetActual);
@@ -225,11 +224,11 @@ window.toggleVisibility = () => {
 
     const btn = document.getElementById('btnVisibility');
     if (tilesetActual.show) {
-        btn.innerHTML = 'Visibility 👁️';
+        btn.innerHTML = 'Visibilidad 👁️';
         btn.classList.remove('hidden-model');
         btn.title = "Ocultar Modelo";
     } else {
-        btn.innerHTML = 'Visibility 🚫';
+        btn.innerHTML = 'Visibilidad 🚫';
         btn.classList.add('hidden-model');
         btn.title = "Mostrar Modelo";
     }
@@ -248,5 +247,4 @@ window.irMundo = () => {
         destination: Cesium.Cartesian3.fromDegrees(-4, 40, 18000000),
         duration: 2
     });
-
 };
