@@ -1,4 +1,4 @@
-# 🌍 SolumCore
+# 🌍 QuijoteMapper
 
 **Plataforma de Inteligencia Geoespacial de Acceso Abierto.**
 *Democratizando el acceso a Gemelos Digitales y análisis del terreno de alta resolución.*
@@ -9,7 +9,7 @@
 
 ## 📖 Descripción del Proyecto
 
-**SolumCore** es una plataforma diseñada para cerrar la brecha entre la imagen satelital convencional y la topografía láser profesional. Funciona como una base de datos dinámica de la realidad física ("Wikipedia de la realidad 3D"), permitiendo la ingesta, visualización y análisis de modelos fotogramétricos de alta fidelidad directamente en el navegador.
+**QuijoteMapper** es una plataforma diseñada para cerrar la brecha entre la imagen satelital convencional y la topografía láser profesional. Funciona como una base de datos dinámica de la realidad física ("Wikipedia de la realidad 3D"), permitiendo la ingesta, visualización y análisis de modelos fotogramétricos de alta fidelidad directamente en el navegador.
 
 El sistema utiliza **3D Tiles** para transmitir gigabytes de geometría compleja sin latencia, permitiendo un nivel de detalle (LOD) dinámico sobre el terreno mundial.
 
