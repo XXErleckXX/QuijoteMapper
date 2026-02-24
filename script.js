@@ -124,22 +124,44 @@ const waterShader = new Cesium.CustomShader({
     `
 });
 
+const ICON_EYE = `
+<svg viewBox="0 0 24 24" aria-hidden="true">
+  <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+</svg>`;
+
+const ICON_EYE_OFF = `
+<svg viewBox="0 0 24 24" aria-hidden="true">
+  <path d="M3 3l18 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <path d="M10.6 10.6a3 3 0 0 0 4.2 4.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <path d="M2 12s3.5-7 10-7c1.7 0 3.2.4 4.5 1.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M6.2 6.2C3.7 8 2 12 2 12s3.5 7 10 7c2 0 3.7-.6 5.1-1.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>`;
+
+function setVisibilityIcon(isVisible) {
+  const btn = document.getElementById('btnVisibility');
+  if (!btn) return;
+  btn.innerHTML = isVisible ? ICON_EYE : ICON_EYE_OFF;
+  btn.classList.toggle('hidden-model', !isVisible);
+  btn.title = isVisible ? "Ocultar modelo" : "Mostrar modelo";
+}
+
 window.toggleVari = () => {
     variEnabled = !variEnabled;
     const btnVari = document.getElementById('btnVari');
 
     if (variEnabled) {
-        btnVari.innerHTML = '🍃 Filtro VARI: ON';
+        btnVari.innerHTML = 'Filtro VARI: ON';
         btnVari.classList.add('active');
 
         if (waterEnabled) {
             waterEnabled = false;
             const btnWater = document.getElementById('btnWater');
-            btnWater.innerHTML = '💧 Filtro de Agua: OFF';
+            btnWater.innerHTML = 'Filtro de agua: OFF';
             btnWater.classList.remove('active');
         }
     } else {
-        btnVari.innerHTML = '🍂 Filtro VARI: OFF';
+        btnVari.innerHTML = 'Filtro VARI: OFF';
         btnVari.classList.remove('active');
     }
 
@@ -153,17 +175,17 @@ window.toggleWater = () => {
     const btnWater = document.getElementById('btnWater');
 
     if (waterEnabled) {
-        btnWater.innerHTML = '💧 Filtro de Agua: ON';
+        btnWater.innerHTML = 'Filtro de Agua: ON';
         btnWater.classList.add('active');
 
         if (variEnabled) {
             variEnabled = false;
             const btnVari = document.getElementById('btnVari');
-            btnVari.innerHTML = '🍂 Filtro VARI: OFF';
+            btnVari.innerHTML = 'Filtro VARI: OFF';
             btnVari.classList.remove('active');
         }
     } else {
-        btnWater.innerHTML = '💧 Filtro de Agua: OFF';
+        btnWater.innerHTML = 'Filtro de Agua: OFF';
         btnWater.classList.remove('active');
     }
 
@@ -256,4 +278,5 @@ window.toggleMenu = () => {
 
     const closed = panel.classList.toggle('closed');
     btn.textContent = closed ? '☰ Menú' : '✕ Cerrar';
+
 };
