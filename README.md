@@ -46,7 +46,7 @@ La web se puede ir **actualizando**, añadiendo cada vez más modelos y cubrir m
 
 ## 🛠️ Stack Tecnológico
 
-La arquitectura es modular, priorizando herramientas de código abierto de uso libre y gratuito:
+La arquitectura es modular, priorizando herramientas que trabajen de forma automática requiriendo una mínima intervención humana:
 
 | Capa | Tecnología | Función |
 | :--- | :--- | :--- |
