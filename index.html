@@ -18,9 +18,7 @@
         <button id="menuToggle" class="menu-toggle" onclick="toggleMenu()">☰ Menú</button>
 
         <div id="menuPanel" class="menu-panel">
-          <div class="menu-grid">
-            <div class="menu-main">
-              <select id="modelSelect" class="model-select" onchange="cargarModelo(this.value)">
+            <select id="modelSelect" class="model-select" onchange="cargarModelo(this.value)">
                 <option value="" disabled selected>Seleccionar modelo</option>
                 <option value="4365574">Villalgordo 1</option>
                 <option value="4365575">Villalgordo 2</option>
@@ -28,59 +26,60 @@
                 <option value="4365588">Pinares</option>
                 <option value="4425349">Cerro Molino de Ledaña</option>
                 <option value="4478396">Cortafuegos Puesto Marmota</option>
-              </select>
-        
-              <button class="btn btn-mundo" onclick="irMundo()">Vista mundial</button>
-        
-              <div class="vari-container">
-                <button class="btn btn-vari" id="btnVari" onclick="toggleVari()">Filtro VARI: OFF</button>
+            </select>
+
+            <button class="btn btn-mundo" onclick="irMundo()">🌍 Vista Mundial</button>
+
+            <div class="vari-container">
+                <button class="btn btn-vari" id="btnVari" onclick="toggleVari()">🍂 Filtro VARI: OFF</button>
                 <div class="tooltip-container">
-                  <span class="info-icon">?</span>
-                  <span class="tooltip-text">
-                    <strong>¿Qué es VARI?</strong><br>
-                    El Índice Atmosféricamente Resistente Visible (VARI) resalta la vegetación usando solo el espectro visible.<br>
-                    <span style="color:#2ecc71">■</span> Vegetación Sana<br>
-                    <span style="color:#e74c3c">■</span> Suelo Desnudo
-                  </span>
+                    <span class="info-icon">?</span>
+                    <span class="tooltip-text">
+                        <strong>¿Qué es VARI?</strong><br>
+                        El Índice Atmosféricamente Resistente Visible (VARI) resalta la vegetación usando solo el espectro
+                        visible.<br>
+                        <span style="color:#2ecc71">■</span> Vegetación Sana<br>
+                        <span style="color:#e74c3c">■</span> Suelo Desnudo
+                    </span>
                 </div>
-              </div>
-        
-              <div class="water-container">
-                <button class="btn btn-water" id="btnWater" onclick="toggleWater()">Filtro de agua: OFF</button>
+            </div>
+
+            <div class="water-container">
+                <button class="btn btn-water" id="btnWater" onclick="toggleWater()">💧 Filtro de Agua: OFF</button>
                 <div class="tooltip-container">
-                  <span class="info-icon">?</span>
-                  <span class="tooltip-text">
-                    <strong>¿Qué es el Filtro de Agua?</strong><br>
-                    Este filtro resalta las zonas de agua detectando la predominancia del azul.<br>
-                    <span style="color:#3498db">■</span> Agua (Azul)<br>
-                    <span style="color:#b4b4c1">■</span> Sin agua (Gris)
-                  </span>
+                    <span class="info-icon">?</span>
+                    <span class="tooltip-text">
+                        <strong>¿Qué es el Filtro de Agua?</strong><br>
+                        Este filtro resalta las zonas de agua detectando la predominancia del azul.<br>
+                        <span style="color:#3498db">■</span> Agua (Azul)<br>
+                        <span style="color:#b4b4c1">■</span> Sin agua (Gris)
+                    </span>
                 </div>
-              </div>
             </div>
-        
-            <!-- A la derecha -->
-            <div id="modelControls" class="menu-side" style="display: none;">
-              <div id="heightControl" class="height-control">
-                <label for="heightSlider">Altura</label>
-                <div class="height-content">
-                  <div class="slider-wrapper">
-                    <span class="slider-mark">+</span>
-                    <input type="range" id="heightSlider" min="-100" max="0" value="0" step="1"
-                           oninput="updateHeight(this.value)">
-                    <span class="slider-mark">-</span>
-                  </div>
+
+            <div class="row-controls" id="modelControls" style="display: none;">
+                <div id="heightControl" class="height-control">
+                    <label for="heightSlider">Altura</label>
+                    <div class="height-content">
+                        <div class="slider-wrapper">
+                            <span>+</span>
+                            <input type="range" id="heightSlider" min="-100" max="0" value="0" step="1"
+                                oninput="updateHeight(this.value)">
+                            <span>-</span>
+                        </div>
+                    </div>
                 </div>
-              </div>
-        
-              <!-- Icono (sin texto) -->
-              <button id="btnVisibility" class="icon-btn" onclick="toggleVisibility()" aria-label="Visibilidad" title="Ocultar modelo"></button>
+
+                <button id="btnVisibility" class="btn btn-visibility" onclick="toggleVisibility()">
+                    Visibilidad 👁️
+                </button>
             </div>
-          </div>
         </div>
     </div>
 
     <script src="script.js"></script>
 </body>
-
 </html>
+
+
+
