@@ -1,7 +1,7 @@
 # 🌍 QuijoteMapper
 
-**Plataforma de Inteligencia Geoespacial de Acceso Abierto.**
-*Democratizando el acceso a Gemelos Digitales y análisis del terreno de alta resolución.*
+**Plataforma de Gemelos Digitales: Creando una copia digital de Castilla La Mancha**
+*Permitiendo el acceso a mapas 3D de alta resolución para la conservación del patrimonio autonómico, prevención de incendios, control de cauces...*
 
 🔗 **Demo:** [QuijoteMapperWeb](https://xxerleckxx.github.io/QuijoteMapper/)  
 
@@ -9,9 +9,9 @@
 
 ## 📖 Descripción del Proyecto
 
-**QuijoteMapper** es una plataforma diseñada para cerrar la brecha entre la imagen satelital convencional y la topografía láser profesional. Funciona como una "Wikipedia de la realidad 3D", permitiendo la ingesta, visualización y análisis de modelos fotogramétricos en el navegador.
-
-El sistema utiliza **3D Tiles** para transmitir gran cantidad de datos de geometría compleja sin latencia, permitiendo un nivel de detalle dinámico sobre el terreno mundial.
+**QuijoteMapper** es una plataforma web diseñada para cerrar la brecha entre la imagen satelital convencional y la topografía láser profesional. Funciona como una "Wikipedia de la realidad 3D", permitiendo la visualización de copias digitales en el navegador de terreno, edificios, ríos y elementos reales.
+Los datos se obtienen mediante fotografías tomadas por **drones**, a partir de estas fotos se realiza una **reconstrucción 3D con algoritmos trigonométricos**.
+La web se puede ir **actualizando**, añadiendo cada vez más modelos y cubrir más áreas **bajo demanda**. Estos datos están disponibles a traves del portal web para **cualquier persona sin necesidad de conocimientos técnicos.**
 
 ---
 
@@ -46,7 +46,7 @@ El sistema utiliza **3D Tiles** para transmitir gran cantidad de datos de geomet
 
 ## 🛠️ Stack Tecnológico
 
-La arquitectura es modular, priorizando estándares abiertos y eficiencia de costes:
+La arquitectura es modular, priorizando herramientas de código abierto de uso libre y gratuito:
 
 | Capa | Tecnología | Función |
 | :--- | :--- | :--- |
@@ -60,8 +60,9 @@ La arquitectura es modular, priorizando estándares abiertos y eficiencia de cos
 
 ## 🖱️ Controles
 
-* **Click Izquierdo:** Arrastrar mapa (Pan).
-* **Click Derecho:** Zoom in / Zoom out.
-* **Rueda / Click Central:** Rotar e inclinar la cámara (Tilt) para vistas 3D.
+* **Click Derecho:** Zoom.
+* **Click Izquierdo:** Arrastrar mapa.
+* **rueda del ratón:** Zoom in / Zoom out.
+* **Click Rueda / Click Central:** Rotar e inclinar la cámara (Tilt) para vistas 3D.
 * **Panel UI:** Interfaz interactiva desde la que puedes activar o desactivar las capas de análisis (como el filtro VARI o el filtro de agua), alternar el modo de visualización con un botón dedicado, y modificar con precisión la altura del modelo 3D utilizando un *slider*.
 
