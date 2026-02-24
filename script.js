@@ -242,20 +242,10 @@ window.updateHeight = (value) => {
 };
 
 window.toggleVisibility = () => {
-    if (!tilesetActual) return;
+  if (!tilesetActual) return;
 
-    tilesetActual.show = !tilesetActual.show;
-
-    const btn = document.getElementById('btnVisibility');
-    if (tilesetActual.show) {
-        btn.innerHTML = 'Visibilidad 👁️';
-        btn.classList.remove('hidden-model');
-        btn.title = "Ocultar Modelo";
-    } else {
-        btn.innerHTML = 'Visibilidad 🚫';
-        btn.classList.add('hidden-model');
-        btn.title = "Mostrar Modelo";
-    }
+  tilesetActual.show = !tilesetActual.show;
+  setVisibilityIcon(tilesetActual.show);
 };
 
 window.irMundo = () => {
@@ -281,4 +271,5 @@ window.toggleMenu = () => {
     btn.textContent = closed ? '☰ Menú' : '✕ Cerrar';
 
 };
+
 
