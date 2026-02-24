@@ -257,4 +257,3 @@ window.toggleMenu = () => {
     const closed = panel.classList.toggle('closed');
     btn.textContent = closed ? '☰ Menú' : '✕ Cerrar';
 };
-
