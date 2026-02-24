@@ -218,6 +218,7 @@ window.cargarModelo = async id => {
         await tilesetActual.readyPromise;
 
         document.getElementById('modelControls').style.display = 'flex';
+        setVisibilityIcon(true);
         const slider = document.getElementById('heightSlider');
         slider.value = 0;
 
@@ -280,3 +281,4 @@ window.toggleMenu = () => {
     btn.textContent = closed ? '☰ Menú' : '✕ Cerrar';
 
 };
+
