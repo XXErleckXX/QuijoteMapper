@@ -10,14 +10,71 @@ html, body, #cesiumContainer {
     overflow: hidden;
 }
 
-.controles {
+.menu-container {
     position: absolute;
     left: 20px;
     top: 20px;
     z-index: 1000;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.menu-toggle {
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: linear-gradient(145deg, #6c7b8a, #9aa5b0);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    transition: all 0.2s;
+}
+
+.menu-toggle:hover {
+    background: linear-gradient(145deg, #5a6570, #848f98);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.menu-panel {
+    display: flex;
+    flex-direction: column;
     gap: 15px;
+    padding: 14px;
+    border-radius: 14px;
+    background: rgba(20, 20, 20, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.30);
+    overflow: visible;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.menu-panel.closed {
+    transform: translateX(-115%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.menu-panel > .model-select,
+.menu-panel > .btn,
+.menu-panel > .vari-container,
+.menu-panel > .water-container,
+.menu-panel > .row-controls {
+    width: 280px;
+}
+
+.row-controls {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
 }
 
 .btn {
@@ -52,30 +109,30 @@ html, body, #cesiumContainer {
 }
 
 .btn-mundo {
-    background: linear-gradient(145deg, #734E39, #815647);
+    background: linear-gradient(145deg, #8b5a3c, #a36845);
 }
 
 .btn-mundo:hover {
-    background: linear-gradient(145deg, #5D4037, #734E39);
+    background: linear-gradient(145deg, #6d432c, #8b5a3c);
 }
 
 .btn-vari {
-    background: linear-gradient(145deg, #cc7a00, #d68910);
+    background: linear-gradient(145deg, #ff8a00, #ffb347);
     margin-top: 0;
     flex-grow: 1;
     margin-right: 10px;
 }
 
 .btn-vari:hover {
-    background: linear-gradient(145deg, #9c5900, #af6f00);
+    background: linear-gradient(145deg, #e67600, #ff9f1a);
 }
 
 .btn-vari.active {
-    background: linear-gradient(145deg, #4D8042, #5A8E4A);
+    background: linear-gradient(145deg, #4caf50, #2e7d32);
 }
 
 .btn-vari.active:hover {
-    background: linear-gradient(145deg, #3D6A32, #4D8042);
+    background: linear-gradient(145deg, #3d8b40, #256728);
 }
 
 .model-select {
@@ -85,7 +142,7 @@ html, body, #cesiumContainer {
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    background: #1967d2;
+    background: #1e88e5;
     color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     outline: none;
@@ -97,7 +154,7 @@ html, body, #cesiumContainer {
 }
 
 .model-select:hover {
-    background-color: #1554b0;
+    background: #1565c0;
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     border-color: rgba(255, 255, 255, 0.4);
@@ -109,7 +166,7 @@ html, body, #cesiumContainer {
 }
 
 .btn-water {
-    background: linear-gradient(145deg, #4f8ca0, #67A8C2);
+    background: linear-gradient(145deg, #00a8ff, #4dd0e1);
     color: white;
     margin-top: 0;
     flex-grow: 1;
@@ -118,19 +175,19 @@ html, body, #cesiumContainer {
 }
 
 .btn-water:hover {
-    background: linear-gradient(145deg, #3f7a90, #5194a8);
+    background: linear-gradient(145deg, #0091ea, #26c6da);
 }
 
 .btn-water.active {
-    background: linear-gradient(145deg, #b4b4c1, #c8c8d1);
+    background: linear-gradient(145deg, #b0bec5, #eceff1);
 }
 
 .btn-water.active:hover {
-    background: linear-gradient(145deg, #9a9aa7, #aeaeb5);
+    background: linear-gradient(145deg, #90a4ae, #cfd8dc);
 }
 
 .btn-visibility {
-    background: linear-gradient(145deg, #4D8042, #5A8E4A);
+    background: linear-gradient(145deg, #43a047, #66bb6a);
     color: white;
     border: 2px solid transparent;
     border-radius: 8px;
@@ -148,7 +205,7 @@ html, body, #cesiumContainer {
 }
 
 .btn-visibility:hover {
-    background: linear-gradient(145deg, #3D6A32, #4D8042);
+    background: linear-gradient(145deg, #2e7d32, #43a047);
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     border-color: rgba(255, 255, 255, 0.3);
@@ -159,11 +216,11 @@ html, body, #cesiumContainer {
 }
 
 .btn-visibility.hidden-model {
-    background: linear-gradient(145deg, #b4b4c1, #c8c8d1);
+    background: linear-gradient(145deg, #b0bec5, #cfd8dc);
 }
 
 .btn-visibility.hidden-model:hover {
-    background: linear-gradient(145deg, #9a9aa7, #aeaeb5);
+    background: linear-gradient(145deg, #90a4ae, #b0bec5);
 }
 
 .vari-container,
@@ -238,12 +295,6 @@ html, body, #cesiumContainer {
     opacity: 1;
 }
 
-.row-controls {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-}
-
 .height-control {
     background: white;
     padding: 10px;
@@ -301,13 +352,21 @@ html, body, #cesiumContainer {
 }
 
 @media (max-width: 768px) {
-    .controles {
+    .menu-container {
         left: 10px;
         top: 10px;
     }
-    
+
     .btn {
         padding: 12px 20px;
         font-size: 14px;
+    }
+
+    .menu-panel > .model-select,
+    .menu-panel > .btn,
+    .menu-panel > .vari-container,
+    .menu-panel > .water-container,
+    .menu-panel > .row-controls {
+        width: 240px;
     }
 }

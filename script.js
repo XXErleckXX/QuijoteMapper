@@ -22,7 +22,8 @@ const modelos = {
     4365575: 'Villalgordo 2',
     4365576: 'Minaya',
     4365588: 'Pinares',
-    4425349: 'Cerro Molino Ledaña'
+    4425349: 'Cerro Molino Ledaña',
+    4478396: 'Cortafuegos Puesto Marmota'    
 };
 
 let tilesetActual = null;
@@ -247,4 +248,12 @@ window.irMundo = () => {
         destination: Cesium.Cartesian3.fromDegrees(-4, 40, 18000000),
         duration: 2
     });
+};
+
+window.toggleMenu = () => {
+    const panel = document.getElementById('menuPanel');
+    const btn = document.getElementById('menuToggle');
+
+    const closed = panel.classList.toggle('closed');
+    btn.textContent = closed ? '☰ Menú' : '✕ Cerrar';
 };
